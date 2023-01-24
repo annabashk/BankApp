@@ -8,11 +8,15 @@ namespace BankApp
         {
             var interest = new Calculator();
             var account = new Account();
-            //account.Type = "Обычный";
-            account.Balance = 10000;
+            account.Balance = 40000.0;
 
+            Console.WriteLine("Если тип - обычный:");
             interest.InterestType(account, new NormalCalculateInterest());
-            //Console.WriteLine();
+            Console.WriteLine(account.Interest);
+
+            Console.WriteLine("Если тип - зарплатный:");
+            interest.InterestType(account, new SalaryCalculateInterest());
+            Console.WriteLine(account.Interest);
         }
     }
 }

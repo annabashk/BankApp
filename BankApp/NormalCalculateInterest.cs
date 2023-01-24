@@ -11,14 +11,14 @@ namespace BankApp
     {
         public void Calculate(Account account)
         {
-            //account.Interest = account.Balance * 0.4;
-            if (account.Balance < 1000)
+            account.Interest = account.Balance * 0.4;
+            if (account.Balance < 1000.0)
                 account.Interest -= account.Balance * 0.2;
 
-            if (account.Balance < 50000)
+            if (account.Balance < 50000.0)
                 account.Interest -= account.Balance * 0.4;
 
-            Console.WriteLine(account.Interest);
+            //Console.WriteLine(account.Interest);
         }
     }
 }
